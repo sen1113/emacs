@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads nil nil ("elscreen-pkg.el" "elscreen.el") (21639
-;;;;;;  44634 396000))
+;;;### (autoloads nil nil ("elscreen-pkg.el" "elscreen.el") (22141
+;;;;;;  24326 782000))
 
 ;;;***
 

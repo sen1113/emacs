@@ -2,7 +2,7 @@
 ;; setting home directory
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (cd "c:/Users/takuya/Skydrive")
-
+(setq gtags-path-style 'relative)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; setting language
@@ -51,8 +51,8 @@
 		    '(border-color . "white")
 		    '(mouse-color . "pink")
 		    '(cursor-color . "#ffffcc")
-		    '(width . 80)
-		    '(height . 40)
+		    '(width . 84)
+		    '(height . 44)
 		    '(top . 10)
 		    '(alpha . 80)
 		    '(left . 10))
@@ -77,7 +77,7 @@
 ;; setting load-path
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;(setq load-path (append '("~/.emacs.d/elisp/" "~/.emacs.d/") load-path))
+(setq load-path (append '("~/.emacs.d/elisp/" "~/.emacs.d/") load-path))
 ;; user-emacs-directory変数が未定義のため次の設定を追加
 (when (< emacs-major-version 23)
   (defvar user-emacs-directory "~/.emacs.d/"))
@@ -111,8 +111,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;; setting indent
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
 ;; 改行後インデント
 (global-set-key "\C-m" 'newline-and-indent)
 
@@ -184,8 +182,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; find-file で画像が見れます
 (auto-image-file-mode)
-
-
 
 ;;;add;;
 
@@ -325,38 +321,38 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; setting elscreen
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;; プレフィクスキーはC-z
+;; (setq elscreen-prefix-key (kbd "C-z"))
+;; (elscreen-start)
+;; ;;; タブの先頭に[X]を表示しない
+;; (setq elscreen-tab-display-kill-screen nil)
+;; ;;; header-lineの先頭に[<->]を表示しない
+;; (setq elscreen-tab-display-control nil)
+;; ;;; バッファ名・モード名からタブに表示させる内容を決定する(デフォルト設定)
+;; (setq elscreen-buffer-to-nickname-alist
+;;       '(("^dired-mode$" .
+;;          (lambda ()
+;;            (format "Dired(%s)" dired-directory)))
+;;         ("^Info-mode$" .
+;;          (lambda ()
+;;            (format "Info(%s)" (file-name-nondirectory Info-current-file))))
+;;         ("^mew-draft-mode$" .
+;;          (lambda ()
+;;            (format "Mew(%s)" (buffer-name (current-buffer)))))
+;;         ("^mew-" . "Mew")
+;;         ("^irchat-" . "IRChat")
+;;         ("^liece-" . "Liece")
+;;         ("^lookup-" . "Lookup")))
+;; (setq elscreen-mode-to-nickname-alist
+;;       '(("[Ss]hell" . "shell")
+;;         ("compilation" . "compile")
+;;         ("-telnet" . "telnet")
+;;         ("dict" . "OnlineDict")
+;;         ("*WL:Message*" . "Wanderlust")))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;setting elscreen
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; プレフィクスキーはC-z
-(setq elscreen-prefix-key (kbd "C-z"))
-(elscreen-start)
-;;; タブの先頭に[X]を表示しない
-(setq elscreen-tab-display-kill-screen nil)
-;;; header-lineの先頭に[<->]を表示しない
-(setq elscreen-tab-display-control nil)
-;;; バッファ名・モード名からタブに表示させる内容を決定する(デフォルト設定)
-(setq elscreen-buffer-to-nickname-alist
-      '(("^dired-mode$" .
-         (lambda ()
-           (format "Dired(%s)" dired-directory)))
-        ("^Info-mode$" .
-         (lambda ()
-           (format "Info(%s)" (file-name-nondirectory Info-current-file))))
-        ("^mew-draft-mode$" .
-         (lambda ()
-           (format "Mew(%s)" (buffer-name (current-buffer)))))
-        ("^mew-" . "Mew")
-        ("^irchat-" . "IRChat")
-        ("^liece-" . "Liece")
-        ("^lookup-" . "Lookup")))
-(setq elscreen-mode-to-nickname-alist
-      '(("[Ss]hell" . "shell")
-        ("compilation" . "compile")
-        ("-telnet" . "telnet")
-        ("dict" . "OnlineDict")
-        ("*WL:Message*" . "Wanderlust")))
 
 ;;;
 ;;; end of file
